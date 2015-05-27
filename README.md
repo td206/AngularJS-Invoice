@@ -21,7 +21,6 @@ A directive like so would be great:
 
 
 ```
-
 invoicer.directive('removeOnClick', function() {
     return {
         link: function(scope, elt, attrs) {
@@ -31,13 +30,11 @@ invoicer.directive('removeOnClick', function() {
         }
     }
 });
-
 ```
 
 Then in the HTML 
 
 ```
-
 <tr remove-on-click ng-repeat="item in invoice.line_items" ng-hide="(item.price == 0)">
     <td>
         <p>
@@ -48,7 +45,6 @@ Then in the HTML
      <td><p editable-text="invoice.line_items[$index].price" e-style="width: 87px">{{item.price | number}}</p></td>
 </tr>
 <button class="remover-btn" ng-click="remove()">X</button>
-
 ```
 
 BUT one would also have to recalculate the total at the same time, or else the line item will go away but the total stay the same.
